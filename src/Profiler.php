@@ -81,10 +81,8 @@ class Profiler
      *
      * @param array|string      $options Either options array or api key (when string)
      * @param int               $sampleRate Deprecated, use "sample_rate" key in options instead.
-     *
-     * @return void
      */
-    public static function start($options = array(), $sampleRate = null)
+    public static function start($options = array(), $sampleRate = null): void
     {
     }
 
@@ -96,12 +94,14 @@ class Profiler
     {
     }
 
-    public static function isStarted()
+    public static function isStarted(): bool
     {
+        return false;
     }
 
-    public static function isProfiling()
+    public static function isProfiling(): bool
     {
+        return false;
     }
 
     /**
@@ -111,8 +111,9 @@ class Profiler
      *
      * @return bool
      */
-    public static function isTracing()
+    public static function isTracing(): bool
     {
+        return false;
     }
 
     /**
@@ -174,7 +175,7 @@ class Profiler
      *
      * @return \Tideways\Traces\Span
      */
-    public static function createSpan($name)
+    public static function createSpan($name): Traces\Span
     {
         return new \Tideways\Traces\NullSpan();
     }
