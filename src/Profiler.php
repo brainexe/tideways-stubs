@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Tideways;
 
+use Tideways\Traces\NullSpan;
+use Tideways\Traces\Span;
+
 /**
  * Tideways PHP API
  *
@@ -38,7 +41,7 @@ class Profiler
      *
      * @param string $framework
      */
-    public static function detectFramework($framework)
+    public static function detectFramework($framework): void
     {
     }
 
@@ -48,7 +51,7 @@ class Profiler
      * @param array<string> $functionNames
      * @return void
      */
-    public static function addIgnoreFunctions(array $functionNames)
+    public static function addIgnoreFunctions(array $functionNames): void
     {
     }
 
@@ -86,11 +89,11 @@ class Profiler
     {
     }
 
-    public static function setTransactionName($name)
+    public static function setTransactionName($name): void
     {
     }
 
-    public static function setServiceName($name)
+    public static function setServiceName($name): void
     {
     }
 
@@ -134,7 +137,7 @@ class Profiler
      * @param scalar $value
      * @return void
      */
-    public static function setCustomVariable($name, $value)
+    public static function setCustomVariable($name, $value): void
     {
     }
 
@@ -144,7 +147,7 @@ class Profiler
      * @param string $function
      * @param string $category
      */
-    public static function watch($function, $category = null)
+    public static function watch($function, $category = null): void
     {
     }
 
@@ -162,7 +165,7 @@ class Profiler
      *     return $span->getId();
      * });
      */
-    public static function watchCallback($function, $callback)
+    public static function watchCallback($function, $callback): void
     {
     }
 
@@ -173,25 +176,37 @@ class Profiler
      *
      *  $span = \Tideways\Profiler::createSpan('sql');
      *
-     * @return \Tideways\Traces\Span
+     * @return Span
      */
     public static function createSpan($name): Traces\Span
     {
-        return new \Tideways\Traces\NullSpan();
+        return new NullSpan();
     }
 
     /**
      * Stop all profiling actions and submit collected data.
      */
-    public static function stop()
+    public static function stop(): void
     {
     }
 
-    public static function logFatal($message, $file, $line, $type = null, $trace = null)
+    public static function logFatal($message, $file, $line, $type = null, $trace = null): void
     {
     }
 
-    public static function logException($exception)
+    public static function logException($exception): void
+    {
+    }
+
+    public static function enableCallgraphProfiler(): void
+    {
+    }
+
+    public static function enableTracingProfiler(): void
+    {
+    }
+
+    public static function addEventMarker(string $name): void
     {
     }
 

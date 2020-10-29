@@ -12,8 +12,9 @@ class NullSpan extends Span
 
     public function getSpans()
     {
-        return array();
+        return [];
     }
+
     public function getId()
     {
         return 0;
@@ -39,7 +40,7 @@ class NullSpan extends Span
     /**
      * Annotate span with metadata.
      *
-     * @param array<string,scalar>
+     * @param array
      */
     public function annotate(array $annotations)
     {
