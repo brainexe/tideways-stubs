@@ -29,7 +29,7 @@ abstract class Span
     /**
      * Annotate span with metadata.
      *
-     * @param array<string,scalar>
+     * @param array
      */
     abstract public function annotate(array $annotations);
 }
