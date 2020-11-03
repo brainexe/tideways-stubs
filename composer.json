@@ -3,7 +3,7 @@
     "license": "MIT",
     "description": "Stubs for Tideways profiler - Having IDE support etc when the PHP extension is in use",
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Tideways\\": "src/"
         }
     },
